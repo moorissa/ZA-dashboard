@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>South Africa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+  <style type="text/css">
+
+  	.footer {
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  padding: 1rem;
+	  background-color: #efefef;
+	  text-align: center;
+	  font-style: 14px;
+	  font-weight: 300;
+	}
+
+	.header {
+		font-size: 40px;
+		font-weight: 400;
+	}
+
+	.split-para {
+		display:block;
+		font-size: 24px;
+		font-weight: 200;
+	}
+
+	.split-para span {
+		display:block;
+		float:right;
+		font-size: 14px;
+		font-weight: 200;
+		text-align: right;
+		vertical-align: text-bottom;
+		margin: 0;
+	}
+
+	.populationPyramid {
+		font-size: 22px;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	img {
+    display: block;
+    margin: auto;
+	}
+
+	#mapid { height: 400px; width: 50%}
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="header">Legacy of a Century: South Africa Today</h1>
+<p class="split-para">A statistical attempt to explore the nation's journey after the life of Nelson Mandela.
+  <!-- <span>Please view this page using Chrome.</span> -->
+</p>
+
+
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-pills nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">History</a></li>
+    <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Population</a></li>
+    <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">Demographics</a></li>
+    <li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">Socioeconomic</a></li>
+    <li role="presentation"><a href="#5" aria-controls="5" role="tab" data-toggle="tab">Security</a></li>
+    <li role="presentation"><a href="#6" aria-controls="6" role="tab" data-toggle="tab">About</a></li>
+  </ul>
+
+<!-- Tab panes -->
+  <div class="tab-content">
+
+  <!-- History -->
+	  <div role="tabpanel" class="tab-pane active" id="1">
+      <br/>
+      <h3>Nelson Mandela's Journey, 1918-2013</h3>
+      <p>As one of the most prominent leaders in history, Mandela started an anti-apartheid revolution and had since left a huge impact in the lives of South Africans and million others around the world.
+         Here is a look to the life of Madiba, a <a href='https://en.wikipedia.org/wiki/Xhosa_language' target="_blank">Xhosa</a> name he's often referred to, which in English means "the Father of the Nation."<br/><br/>
+         While this page focuses on Mandela's story, the next few tabs will provide you with a closer look to the historical data of South Africa through interactive visualizations, covering population, demographics, conflict regions, and the socio-economic aspect of the country.
+         This platform was created to let you explore how South Africa today, from many aspects, is a reflection of a lifetime legacy.</p><br/>
+	  	 <div id="timeline">
+	  	 	<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AmNxBKGzRxw8dE9rbThJX0RCUmxheW1oOUMxWEdLd3c&amp;font=Georgia-Helvetica&amp;maptype=TERRAIN&amp;lang=en&amp;height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+
+	  	 </div>
+
+	  </div>
+
+	<!-- Population -->
+	  <div role="tabpanel" class="tab-pane" id="2">
+      <br/>
+	  	<img width="42%" height="530" frameborder="0" src="images/population.png" align = "left" frameborder="10" scrolling="no" style="float: left; padding-right: 45px; padding-bottom: 40px" />
+      <h3>Population Overview</h3>
+      <p>More than the fight for freedom of the blacks, Mandela fought for racial equality, democracy, and diversity. The population of South Africa today that you see after Mandela's life is a growing reflection of a diverse nation, with over 56.5-million people and a wide variety of cultures, languages, and religious beliefs.<br/><br/>
+         According to Census 2011 data from <a href='http://www.statssa.gov.za/'>Statistics South Africa</a>, the country’s population in 2011 was 51,770,560, of which 26,581,769 (51.3%) were female and 25,188,791 (48.7%) were male.<br/><br/>
+         Africans are in the majority at just over 41-million, making up 79.2% of the total population. The coloured population is 4,615,401 (8.9%), while there are 4,586,838 (8.9%) whites. The Indian/Asian population stands at 1,286,930 (2.5%).<br/><br/>
+         In 2011, “other” was included in the Census, and accounts for 280,454 or 0.5% of the total.
+      </p><br/>
+      <img width="58%" height="242" frameborder="0" src="images/population_byrace.png" align = "right" frameborder="10" scrolling="no"/>
+      <br/><br/><br/><br/>
+      <h3>By Province</h3>
+      <p>The provinces of Gauteng and KwaZulu-Natal are the most populous, accounting for 42% of South Africa’s population:  12.3 million people (23,7%) live in Gauteng, while 10.3 million (19.8%) live in KwaZulu-Natal.
+        <br/><br/>
+        They are followed by the Eastern Cape with 6.56-million (12.7%), the Western Cape with 5.82-million (11.3%), Limpopo with 5.4-million (10.4%), Mpumalanga with 4.04-million (7.8%), North West with 3.51- million (6.8%), and the Free State with 2.75-million (5.3%).
+        <br/><br/>
+        The Northern Cape is the largest province, but it is an arid region with the smallest population – only 1.15-million people, or 2.2% of the total.</p>
+        <br/>
+	  </div>
+
+	<!-- Demographic -->
+	 <div role="tabpanel" class="tab-pane" id="3">
+    <br/>
+
+    <h3>Demographics Overview</h3>
+    <p>
+      Taking the population statistics further, we break down the demographics data to a more granular level using two decades worth of data (source: <a href = 'http://data.uis.unesco.org/' target='_blank'>UNESCO</a>).
+      This allows us to perform exploratory analysis on South Africa's population based on age, sex, location, birth and mortality rates. Hover over the charts below to see values at a particular point in time.
+    </p>
+    <br/>
+    <h3>By Age and Gender, 1980-2050 (projected)</h3>
+
+	 	<p class="populationPyramid">Population Size</p>
+
+	 	<iframe width="100%" height="500" align = "middle" frameborder="0" scrolling="no"
+	  	src="https://willgeary.github.io/DRCPopulationPyramid/"></iframe>
+
+	  	<p style="color:white">...</p>
+
+	  	<hr width="90%">
+      <h3>By Rates Comparison: South Africa v. Neighboring Countries, 1999-2015</h3>
+
+      <!-- Legend -->
+      <br/><p>South Africa's neighboring countries:</p>
+      <img width="65%" height="175" frameborder="0" src="images/ZA_neighbors.png" alt="Neighbors">
+      <!-- End Legend -->
+
+	  	<iframe width="50%" height="500" align = "left" frameborder="0" scrolling="no"
+	  	src="images/fertility_rate.html"></iframe>
+
+	  	<iframe width="50%" height="500" align = "middle" frameborder="0" scrolling="no"
+	  	src="images/mortality_rate.html"></iframe>
+
+	  	<iframe width="50%" height="500" align = "right" frameborder="0" scrolling="no"
+	  	src="images/expectancy_rate.html"></iframe>
+
+	  	<iframe width="50%" height="500" align = "right" frameborder="0" scrolling="no"
+	  	src="images/hiv.html"></iframe>
+
+      <!-- Legend -->
+      <img width="83%" height="50" src="images/country_legend.png" alt="Legend">
+      <!-- End Legend -->
+
+      <p style="color:white">...</p>
+
+	  	<hr width="90%">
+      <h3>By Location: Urban v. Rural Areas, 1990-2017</h3>
+	  	<iframe width="100%" height="500" align = "left" frameborder="0" scrolling="no"
+	  	src="images/urban_rural.html"></iframe>
+
+	  	<p style="color:white">...</p>
+
+	  	<p> </p>
+
+	  	<p style="color:white">...</p>
+
+
+	  </div>
+
+
+	<!-- Socio-Econommic -->
+ 	  <div role="tabpanel" class="tab-pane" id="4"><br/>
+      <h3>Socioconomic Stability, 1999-2015</h3>
+      <p>Apart from the demographic factor, the socioeconomic stability of South Africa can be explored through its <a href='http://www.investopedia.com/terms/g/gdp.asp' target='_blank'>gross domestic product (GDP)</a> and poverty rates.
+         As a primary indicator that can be used to gauge the health of a country's economy, the following charts show how the economy in South Africa tends to perform much better than that of its neighboring countries, including Botswana, Lesotho, Mozambique, Namibia, Swaziland, and Zimbabwe.
+         <br/><br/>
+         Both GDP and GDP per capita represent the dollar values of all goods and services produced over a specific time period; which means that compared to most African countries, South African economy could easily be one of the highest among other developing countries!
+         Hover over the chart to pinpoint the numerical details on the GDP of South Africa and its neighbors at a particular year.</p>
+      <iframe width="50%" height="500" align = "left" frameborder="0" scrolling="no"
+      src="images/GDP.html"></iframe>
+
+      <iframe width="50%" height="500" align = "middle" frameborder="0" scrolling="no"
+      src="images/GDPpercapita.html"></iframe>
+
+      <!-- Legend -->
+      <img width="83%" height="50" src="images/country_legend.png" alt="Legend">
+      <!-- End Legend -->
+
+      <p style="color:white">...</p>
+
+	  	<hr width="90%">
+
+      <br/><h3>A Measure of the Purchasing Power Parity, 2000-2011</h3>
+      <p>While the GDP is a good indicator of the socioeconomic stability of South Africa, poverty rates as a measure of the <a href='http://www.investopedia.com/updates/purchasing-power-parity-ppp/' target='_blank'>purchasing power parity (PPP)</a> could also be used a metric estimate to compare economic productivity and standards of living between countries and across time.
+         The charts below allow you to explore further this factor in regards to the population living under $3.10 and $1.90 (in US dollars).</p>
+      <iframe width="50%" height="500" align = "left" frameborder="0" scrolling="no"
+      src="images/poverty310.html"></iframe>
+
+      <iframe width="50%" height="500" align = "middle" frameborder="0" scrolling="no"
+      src="images/poverty190.html"></iframe>
+
+      <!-- Legend -->
+      <img width="83%" height="50" src="images/country_legend_dots.png" alt="Legend">
+      <!-- End Legend -->
+
+	  	<p> </p>
+
+	  	<p style="color:white">...</p>
+<!--
+	  	<h4>GDP Composition by Sector (2016 est.)</h4>
+
+			<table style="width:50%" align="left">
+			  <tr>
+			    <th>Sector</th>
+			    <th>Percentage</th>
+			  </tr>
+			  <tr>
+			    <td>Agriculture</td>
+			    <td>20.1%</td>
+			  </tr>
+			  <tr>
+			    <td>Industry</td>
+			    <td>31.7%</td>
+			  </tr>
+			  <tr>
+			    <td>Services</td>
+			    <td>48.1%</td>
+			  </tr>
+			</table>
+
+			<table style="width:50%" align="right">
+
+			  <tr>
+			    <th>Agricultural Products:</th>
+			  </tr>
+			  <tr>
+			    <td>coffee</td>
+			    <td>sugar</td>
+			    <td>palm oil</td>
+			    <td>rubber</td>
+			    <td>tea</td>
+			  </tr>
+			  <tr>
+			    <td>cotton</td>
+			    <td>cocoa</td>
+			    <td>quinine</td>
+			    <td>cassava</td>
+			  </tr>
+			  <tr>
+			    <td>bananas</td>
+			    <td>plantains</td>
+			    <td>peanuts</td>
+			    <td>root crops</td>
+			  </tr>
+			  <tr>
+			    <td>corn</td>
+			    <td>fruits</td>
+			    <td>wood products</td>
+			    <td> </td>
+
+			  </tr>
+			</table> -->
+
+	  	<p style="color:white">...</p>
+
+	  </div>
+
+
+	  <!-- Conflict Map -->
+
+	  <div role="tabpanel" class="tab-pane" id="5">
+      <br/><h3>Conflict Regions</h3>
+      <p>Although South Africa resolved major conflicts through its independence in 1994, the peacekeeping mechanism of the country's politics, defence and security remains being put to test several times in recent years.
+         The map below, taken from 2017 data, allows you to visualize conflict regions that still exist to date. <br><br>
+         Scroll down the right side of the map to see different types of fatalities, interactions, and actors of the event over certain locations.
+         The colors of current dots represent different interaction types, and their sizes proportional to the size of the event's fatality.
+         Hover over each dot to see complete information on the event. Select a single date or a range of dates in the timeline below the map to specifically see which events happen at a particular time.</p>
+      <br/>
+	  	<iframe width="100%" height="800" frameborder="0" src="https://moorissa.carto.com/builder/e0f61bd2-9bce-11e7-852e-0e6ef1df956e/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+	  </div>
+
+	<!-- About -->
+
+	  <div role="tabpanel" class="tab-pane" id="6">
+	  <p style="color:white">...</p>
+
+    <img width="100%" height="765" frameborder="0" src="images/ZA-portrait.jpg" alt="Moorissa-in-South-Africa">
+    <i>Credits to a stranger, for capturing me with South Africa's staple destination, <a href='http://www.tablemountainnationalpark.org/' target='_blank'>Table Mountain</a>, in the background. August 26, 2017.</i>
+    <br/>
+
+    <h3>About</h3>
+
+    <p>This project was inspired by my recent two-week South Africa trip, during which I volunteered to teach at Kuyasa Primary School.
+       More life-altering than I could have ever imagined, the trip allowed me to find meanings in history and learn what makes this country as it is today.
+       In my tour to Robben Island, I was able to discover a journey of one of the country's most respected heroes, Nelson Mandela. It just piqued my interest to learn more about Mandela's life and its influence on what South Africa looks like today.
+       This dashboard project therefore explores how South Africa today, from many aspects, is a reflection of his lifetime legacy.
+       <br/><br/>
+       Also a special shoutout to my classmate <a href='http://willgeary.github.io/' target='_blank'>Will Geary</a> for his work on UN Peacekeeping dashboard that inspired me to create (but most importantly finish) this platform.
+     </p><br/>
+
+	  <h3>Codes</h3>
+
+	  <p> All data, codes, and outputs can be found in my Github repository <b><a href="https://github.com/moorissa/ZA-dashboard">here</a></b>.</p>
+    <br/>
+
+    <h3>Tools</h3>
+        The tools for parsing public data, format and manipulate datasets, and creating maps and charts include:
+        <li><a href="https://timeline.knightlab.com/">TimelineJS</a> for creating timeline slideshow on Nelson Mandela's Journey.</li>
+        <li><a href="https://walkerke.github.io/2014/06/rcharts-pyramids/">rCharts</a> for constructing the dynamic population pyramid.</li>
+        <li><a href="https://plot.ly/">Plotly</a> in Python for plotting all kinds charts, except map.</li>
+        <li><a href="https://carto.com/">Carto</a> for creating the conflict map.</li>
+    </p><br/>
+
+   <h3>Datasets</h3>
+	  <p>
+      <li><a href="http://www.census.gov/population/international/data/idb/informationGateway.php">International Data Base from the US Census Bureau</a> for population pyramid.</li>
+      <li><a href="http://data.uis.unesco.org/">UNESCO</a> mainly for demographics and socioeconomic data.</li>
+      <li><a href="http://www.fao.org/faostat/en/#country/250">Food and Agriculture Organization of the United Nations</a> also for demographics. </li>
+      <li><a href="https://www.cia.gov/library/publications/the-world-factbook/geos/cg.html">CIA World Factbook</a> for some GDP charts.</li>
+      <li><a href="http://www.acleddata.com/data/realtime-data">Armed Conflict Location and Event Dataset (ACLED)</a> for conflict zones in the security section.</li>
+    </p>
+    <p>More detailed instructions of obtaining and parsing each dataset can be found in the jupyter notebook in the aforementioned Github repository.</p>
+	  </div>
+    	  	<p style="color:white">...</p>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+	<p class="text-muted" align="center">Moorissa Tjokro    |    <a href="http://moorissa.com/" target="_blank">moorissa.com</a></p>
+</div>
+
+
+<!-- JS libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+<!-- Custom javascript -->
+<script src="script.js"></script>
